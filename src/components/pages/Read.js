@@ -18,7 +18,10 @@ function Read() {
   }
   return (
     <div>
-      <div style={{width:600,margin:'0 auto'}}>
+      <center>
+        <h3 style={{marginTop:10}}>All students</h3>
+      </center>
+      <div style={{width:800,margin:'0 auto'}}>
         
         <table className="table">
           <thead>
@@ -43,8 +46,10 @@ function Read() {
               <td>{obj.phone}</td>
               <td>{obj.address}</td>
               <td>
-                <button onClick={() => deletehandle(obj.id)} className='btn btn-danger btn-sm '>Delete</button>
-                <button onClick={()=> navigate(`/single_edit/${obj.id}`)} style={{marginLeft:'5px'}} className='btn btn-info btn-sm'>Edit</button>
+                <div style={{display:'flex',justifyContent:'center'}}>
+                <button onClick={() => deletehandle(obj.id)} className='btn btn-danger btn-sm ' style={{marginLeft:'5px',width:60,color:'#fff'}}>Delete</button>
+                <button onClick={()=> navigate(`/single_edit/${obj.id}`)} style={{marginLeft:'5px',width:50,color:'#fff'}} className='btn btn-info btn-sm'>Edit</button>
+                </div>
               </td>
             </tr>
             ))}
