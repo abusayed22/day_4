@@ -5,17 +5,17 @@ import { pre_delete_data, pre_get_data } from '../../redux/actions/action';
 
 function Read() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const studentsInfo = useSelector(state => state.reducers.users)
+  const navigate = useNavigate();
+  const studentsInfo = useSelector(state => state.reducers.users);
 
   useEffect(() => {
     dispatch(pre_get_data())
     
-  },[studentsInfo])
+  },[studentsInfo]);
   
   const deletehandle = (id) => {
     dispatch(pre_delete_data(id))
-  }
+  };
   return (
     <div>
       <center>
