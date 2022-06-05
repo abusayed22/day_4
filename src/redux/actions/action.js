@@ -47,3 +47,35 @@ export const pre_delete_data = (id) => {
         .catch(err => console.log(err))
     }
 }
+
+
+const go_edit = (data) => {
+    return{
+        type:types.GOING_SINGLE,
+        payload:data
+    }
+}
+export const pre_go_edit = (id) => {
+    return(dispatch)=> {
+        axios.get(`http://127.0.0.1:8000/api/students/${id}`)
+        .then(res => {
+            dispatch(go_edit(res.data.student))
+        })
+    }
+}
+
+const edit_update = () => {
+    return{
+        type:types.EDIT_UPDATE
+    }
+}
+export const pre_edit_update = (id,single) => {
+    return(dispatch) => {
+        axios.put(`http://127.0.0.1:8000/api/students/${id}`,single)
+        .then( res => {
+            dispatch(edit_update())
+            dispatch(get_data())
+        })
+        .catch(err => console.log(err))
+    }
+}

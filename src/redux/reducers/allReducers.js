@@ -19,6 +19,19 @@ const allReducers = (state = initialState,action) => {
                 users:action.payload
             }
             break;
+
+        case types.GOING_SINGLE:
+            return{
+                ...state,
+                user:action.payload
+            }
+            break;
+
+        case types.EDIT_UPDATE:
+            return{
+                ...state
+            }
+            break;
     
         default:
             return state
